@@ -1,0 +1,17 @@
+.product{
+  width: 150px;
+  text-align: center;
+  border: 2px solid gray;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.quantity{
+  display:flex;
+  justify-content: space-around;
+}
+
+.product img{
+  width: 100%;
+}

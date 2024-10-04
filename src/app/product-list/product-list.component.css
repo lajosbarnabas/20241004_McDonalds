@@ -1,0 +1,26 @@
+li{
+  border: 2px solid gray;
+  border-radius: 5px;
+  padding: 5px;
+  width: 150px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+ul{
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 3px;
+}
+
+ul img{
+  height: 120px;
+  cursor: pointer;
+}
+
+.productInCart {
+  display: flex;
+  flex-wrap: wrap;
+}

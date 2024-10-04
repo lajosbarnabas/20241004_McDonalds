@@ -1,0 +1,17 @@
+<h2>Rendelj a McDonald's-ból</h2>
+<ul>
+@for (item of products; track $index){
+    <li (click)="addItem(item)">
+      <div>{{item.name}}</div>
+      <div><img [src]="item.picture_url" [alt]="item.name"></div>
+      <div>{{item.price}} Ft</div>
+    </li>
+  }
+</ul>
+<hr>
+<div class="productInCart">
+  @for (item of itemsInCart; track $index)
+  {
+    <app-product-item [product]="item"></app-product-item>
+  }
+</div>

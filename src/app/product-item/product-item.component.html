@@ -1,0 +1,10 @@
+<div class="product">
+  {{product.name}}
+  <img [src]="product.picture_url" [alt]="product.name">
+  <div class="quantity">
+    <button (click)="increase()">+</button>
+    {{product.quantity}} darab
+    <button (click)="decrease()">-</button>
+  </div>
+  {{product.price}} Ft
+</div>
