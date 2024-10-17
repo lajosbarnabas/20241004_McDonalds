@@ -11,8 +11,21 @@ export class ProductListComponent {
 
   itemsInCart: ProductModel[] = []
 
+  totalMoney: number = 0;
+
+  calculateTotalMoney(){
+    this.totalMoney = 0;
+    this.itemsInCart.forEach(element => {
+      this.totalMoney += (element.price * element.quantity);
+    });
+  }
+
   addItem(product:ProductModel){
-    this.itemsInCart.push(product)
+    product.quantity++;
+    if(!(this.itemsInCart.includes(product))){
+      this.itemsInCart.push(product);
+    }
+    this.calculateTotalMoney();
   }
 
   products: ProductModel[] = [

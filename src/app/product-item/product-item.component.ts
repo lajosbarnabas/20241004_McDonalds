@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output, output } from '@angular/core';
 import { ProductModel } from '../models/product.model';
 
 @Component({
@@ -8,13 +8,18 @@ import { ProductModel } from '../models/product.model';
 })
 export class ProductItemComponent {
   @Input() product!:ProductModel;
+  @Output() quantityChange = new EventEmitter();
 
   increase(){
     this.product.quantity++;
+    this.quantityChange.emit();
   }
 
   decrease(){
-    this.product.quantity--;
+    if(this.product.quantity > 1){
+      this.product.quantity--;
+      this.quantityChange.emit();
+    }
   }
 }
 
